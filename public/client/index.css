@@ -1,0 +1,52 @@
+.page {
+    text-align: center;
+    display: none;
+}
+
+.page-row{
+    width: 500px;
+    display: inline-block;
+    margin: 10px;
+}
+
+.navbar-header{
+    margin-top: 15px;
+}
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    padding: 30px 10px;
+}
+.dropdown-toggle {
+    text-align: left;
+}
+.dropdown-toggle span {
+    float: right;
+    margin-top: 10px;
+}
+.btn-group-lg .dropdown-menu>li>a {
+    padding: 10px 20px;
+}
+.page-row .btn-group,.btn,.dropdown-menu {
+    width: 100%;
+}
+.dropdown-menu li a {
+    cursor: pointer;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+.container {
+    width: auto;
+    max-width: 800px;
+    padding: 0 15px;
+}
+.container .text-muted {
+    text-align: right;
+    margin: 20px 0;
+}

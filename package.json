@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/casser/mirror",
   "dependencies": {
+    "ozero": "~1.0.4",
+    "ozero-http": "~0.0.1",
     "nodejs-websocket": "~1.0.0"
   }
 }

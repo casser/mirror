@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../common/bootstrap.min.css">
+    <link rel="stylesheet" href="../client/index.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="../common/ozero.min.js"></script>
+    <script src="../common/jquery.min.js"></script>
+    <script src="../common/bootstrap.min.js"></script>
+    <script src="../client/config.js"></script>
+    <script src="../client/emitter.js"></script>
+    <script src="../client/router.js"></script>
+    <script src="../client/socket.js"></script>
+    <script src="../client/client.js"></script>
+    <script src="../client/server.js"></script>
+    <script src="../client/mirror.js"></script>
+    <script src="../client/index.js"></script>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="/client"><img src="../images/logo.png"/></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a id="help-button" href="#">Help</a></li>
+            <li><a id="support-button" href="#">Support</a></li>
+            <li><a id="pairname-field" href="#">Pair Name</a></li>
+            <li id="clients-selector" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clients</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a>Action</a></li>
+                    <li><a>Another action</a></li>
+                    <li><a>Something else here</a></li>
+                </ul>
+            </li>
+            <li><a id="logout-button" href="#">X</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container" style="padding: 200px 0px">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div id="loan-amount" class="page">
+                <div class="page-row">
+                    <h2 >Choose your loan amount:</h2>
+                </div>
+                <!-- Single button -->
+                <div class="page-row">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">$</span>
+                        <input type="text" class="form-control" placeholder="Load Amount" data-mirror="la" >
+                    </div>
+                </div>
+                <div class="page-row">
+                    <a class="btn btn-primary btn-lg" href="#loan-purpose" role="button">Continue</a>
+                </div>
+            </div>
+            <div id="loan-purpose" class="page">
+                <div class="page-row">
+                    <h2 >What is your loan purpose?</h2>
+                </div>
+                <!-- Single button -->
+                <div class="page-row">
+                    <div class="btn-group btn-group-lg ">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-mirror="lp">
+                            -- Select One -- <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a data-mirror="lp-01">-- Select One --</a></li>
+                            <li><a data-mirror="lp-02">Credit Card Refinancing</a></li>
+                            <li><a data-mirror="lp-03">Debt Consolidation</a></li>
+                            <li><a data-mirror="lp-04">Home Improvement</a></li>
+                            <li><a data-mirror="lp-05">Major Purchase</a></li>
+                            <li><a data-mirror="lp-06">Wedding</a></li>
+                            <li><a data-mirror="lp-07">Travel/Vacation</a></li>
+                            <li><a data-mirror="lp-08">Business Expenses</a></li>
+                            <li><a data-mirror="lp-09">Medical Expenses</a></li>
+                            <li><a data-mirror="lp-10">Moving Expenses</a></li>
+                            <li><a data-mirror="lp-11">Other</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="page-row">
+                    <a class="btn btn-primary btn-lg" href="#credit-rating" role="button">Continue</a>
+                </div>
+            </div>
+            <div id="credit-rating" class="page">
+                <div class="page-row">
+                    <h2>What is your credit rating?</h2>
+                </div>
+                <!-- Single button -->
+                <div class="page-row">
+                    <div class="btn-group btn-group-lg ">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-mirror="cr">
+                            -- Select One -- <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a data-mirror="cr-1">-- Select One --</a></li>
+                            <li><a data-mirror="cr-2">Excellent (740+)</a></li>
+                            <li><a data-mirror="cr-3">Very Good (700-739)</a></li>
+                            <li><a data-mirror="cr-4">Good (660-699)</a></li>
+                            <li><a data-mirror="cr-5">Major Purchase</a></li>
+                            <li><a data-mirror="cr-6">Fair (620-659)</a></li>
+                            <li><a data-mirror="cr-7">Poor (619 or less)</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="page-row">
+                    <a class="btn btn-primary btn-lg" href="#address-state" role="button">Continue</a>
+                </div>
+            </div>
+            <div id="address-state" class="page">
+                <div class="page-row">
+                    <h2>What is your credit rating?</h2>
+                </div>
+                <!-- Single button -->
+                <div class="page-row">
+                    <div class="btn-group btn-group-lg ">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-mirror="as">
+                            -- Select One -- <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a>-- Select One --</a></li>
+                            <li><a data-mirror="as-AL">Alabama</a></li>
+                            <li><a data-mirror="as-AK">Alaska</a></li>
+                            <li><a data-mirror="as-AZ">Arizona</a></li>
+                            <li><a data-mirror="as-AR">Arkansas</a></li>
+                            <li><a data-mirror="as-CA">California</a></li>
+                            <li><a data-mirror="as-CO">Colorado</a></li>
+                            <li><a data-mirror="as-CT">Connecticut</a></li>
+                            <li><a data-mirror="as-DE">Delaware</a></li>
+                            <li><a data-mirror="as-DC">District Of Columbia</a></li>
+                            <li><a data-mirror="as-FL">Florida</a></li>
+                            <li><a data-mirror="as-GA">Georgia</a></li>
+                            <li><a data-mirror="as-HI">Hawaii</a></li>
+                            <li><a data-mirror="as-ID">Idaho</a></li>
+                            <li><a data-mirror="as-IL">Illinois</a></li>
+                            <li><a data-mirror="as-IN">Indiana</a></li>
+                            <li><a data-mirror="as-IA">Iowa</a></li>
+                            <li><a data-mirror="as-KS">Kansas</a></li>
+                            <li><a data-mirror="as-KY">Kentucky</a></li>
+                            <li><a data-mirror="as-LA">Louisiana</a></li>
+                            <li><a data-mirror="as-ME">Maine</a></li>
+                            <li><a data-mirror="as-MD">Maryland</a></li>
+                            <li><a data-mirror="as-MA">Massachusetts</a></li>
+                            <li><a data-mirror="as-MI">Michigan</a></li>
+                            <li><a data-mirror="as-MN">Minnesota</a></li>
+                            <li><a data-mirror="as-MS">Mississippi</a></li>
+                            <li><a data-mirror="as-MO">Missouri</a></li>
+                            <li><a data-mirror="as-MT">Montana</a></li>
+                            <li><a data-mirror="as-NE">Nebraska</a></li>
+                            <li><a data-mirror="as-NV">Nevada</a></li>
+                            <li><a data-mirror="as-NH">New Hampshire</a></li>
+                            <li><a data-mirror="as-NJ">New Jersey</a></li>
+                            <li><a data-mirror="as-NM">New Mexico</a></li>
+                            <li><a data-mirror="as-NY">New York</a></li>
+                            <li><a data-mirror="as-NC">North Carolina</a></li>
+                            <li><a data-mirror="as-ND">North Dakota</a></li>
+                            <li><a data-mirror="as-OH">Ohio</a></li>
+                            <li><a data-mirror="as-OK">Oklahoma</a></li>
+                            <li><a data-mirror="as-OR">Oregon</a></li>
+                            <li><a data-mirror="as-PA">Pennsylvania</a></li>
+                            <li><a data-mirror="as-RI">Rhode Island</a></li>
+                            <li><a data-mirror="as-SC">South Carolina</a></li>
+                            <li><a data-mirror="as-SD">South Dakota</a></li>
+                            <li><a data-mirror="as-TN">Tennessee</a></li>
+                            <li><a data-mirror="as-TX">Texas</a></li>
+                            <li><a data-mirror="as-UT">Utah</a></li>
+                            <li><a data-mirror="as-VT">Vermont</a></li>
+                            <li><a data-mirror="as-VA">Virginia</a></li>
+                            <li><a data-mirror="as-WA">Washington</a></li>
+                            <li><a data-mirror="as-WV">West Virginia</a></li>
+                            <li><a data-mirror="as-WI">Wisconsin</a></li>
+                            <li><a data-mirror="as-WY">Wyoming</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="page-row">
+                    <a class="btn btn-primary btn-lg" href="#personal-info" role="button">Continue</a>
+                </div>
+            </div>
+            <div id="personal-info" class="page">
+                <div class="page-row">
+                    <h2>Great news!</h2>
+                </div>
+                <!-- Single button -->
+                <div class="page-row">
+                    <input type="text" class="input form-control input-lg" placeholder="First Name" data-mirror="fn">
+                </div>
+                <div class="page-row">
+                    <input type="text" class="input form-control input-lg" placeholder="Last Name" data-mirror="ln">
+                </div>
+                <div class="page-row">
+                    <input type="text" class="input form-control input-lg" placeholder="Email Address" data-mirror="ea">
+                </div>
+                <div class="page-row">
+                    <input type="text" class="input form-control input-lg" placeholder="Phone Number" data-mirror="pn">
+                </div>
+                <div class="page-row">
+                    <a class="btn btn-primary btn-lg" href="#done" role="button">Get My Loan</a>
+                </div>
+            </div>
+            <div id="done" class="page">
+                <div class="page-row">
+                    <h1>DONE</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <p id="username-field" class="text-muted">Place sticky footer content here.</p>
+    </div>
+</div>
+</body>
+</html>
