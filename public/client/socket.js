@@ -4,8 +4,9 @@
 
 MirrorEmitter.declare('MirrorSocket',{
     ':commands' : {
-        WELCOME : 1,
-        PAIR    : 2
+        WELCOME  : 1,
+        PAIR     : 2,
+        CUSTOMER : 3
     },
     static      : function(socket){
         if(socket.commands){
@@ -22,7 +23,7 @@ MirrorEmitter.declare('MirrorSocket',{
     new         : function(mirror){
         this.super();
         this.mirror = mirror;
-        this.url = "ws://"+window.location.hostname+":8081";
+        this.url = "ws://"+window.location.hostname+":8001";
         this.command = {};
         for(var c in MirrorConfig.COMMANDS){
             var cmd = MirrorConfig.COMMANDS[c];

@@ -16,7 +16,7 @@ with(require('ozero')(module)){
     });
 
     HttpServer.new(config).start(8000);
-    HttpSocket.new(config).start(8081);
+    HttpSocket.new(config).start(8001);
 
 
 

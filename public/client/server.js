@@ -22,6 +22,9 @@ MirrorSocket.declare('MirrorServer',{
         this.super(user);
         this.mirror.renderClients(clients);
     },
+    onCustomer  : function(clients){
+        this.mirror.renderClients(clients);
+    },
     onGo        : function(path){
         this.mirror.router.go(path);
     },

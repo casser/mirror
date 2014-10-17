@@ -105,6 +105,7 @@ with(require('ozero')(module)) {
     declare('CustomerConnection',SocketConnection,{
         welcome     : function(){
             this.sendCommand(1,this.user());
+            this.socket.broadcastCustomers();
         },
         user        : function(){
             var user = this.super();
@@ -125,6 +126,7 @@ with(require('ozero')(module)) {
         destroy     : function(){
             this.unlink();
             this.super();
+            this.socket.broadcastCustomers();
         },
         link        : function(officer){
             if(!this.links){
@@ -182,6 +184,7 @@ with(require('ozero')(module)) {
         destroy     : function(){
             this.unlink();
             this.super();
+
         },
         user        : function(){
             var user = this.super();
@@ -256,6 +259,16 @@ with(require('ozero')(module)) {
                 }
             }
             return conns;
+        },
+        broadcastCustomers   : function(){
+            var customers = this.customers();
+            var customersJson = [];
+            customers.forEach(function(customer){
+                customersJson.push(customer.user());
+            });
+            this.officers().forEach(function(officer){
+                officer.sendCommand(3,customersJson);
+            });
         },
         onConnectionOpen     : function (connection) {
             switch(connection.path.split('/')[1]){
