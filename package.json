@@ -1,6 +1,6 @@
 {
-  "name": "mirror",
-  "version": "0.0.0",
+  "name": "bills-experiment-mirror",
+  "version": "0.0.1",
   "description": "mirror ======",
   "main": "index.js",
   "scripts": {
